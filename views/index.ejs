@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LBS&SNS</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript">
+        if(name===''){
+            document.getElementById('header_logOut').visibility=hidden;
+        }
+    </script>
+  </head>
+  <body>
+    <div id="header">
+        <div id="header_userId">欢迎你，
+            <%
+                var name='';
+                if(userId){
+                    name=userId;
+                }else{
+                    name='请登录';
+                }
+            %>
+            <%= name %>
+            <input id="header_logOut" type="button" value="退出"/>
+        </div>
+    </div>
+    <div id="mainFrame">
+        <div id="mainFrame_left" >
+            <div style="margin-left:15px;width:160px;margin-top: 5px;">
+                <div style="float: left;">
+                    <img  style="width:90px; height:90px;" src=<%= userLogo %> />
+                </div>
+                <div style="float: right;width: 55px;font-size:13px;text-align: center">
+                    <br/>
+                    <%=name%>
+                    <br/>
+                    <div style="font-size: 14px;">
+                        <%
+                            var fanNum='';
+                            if(fansCount){
+                                fanNum=fansCount;
+                            }else{
+                                fanNum='0';
+                            }
+                        %>
+                    <%=fanNum%><br/>
+                    粉丝
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mainFrame_right">
+
+        </div>
+    </div>
+  </body>
+</html>

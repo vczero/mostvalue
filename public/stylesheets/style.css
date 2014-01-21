@@ -1,0 +1,47 @@
+body {
+    font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
+    margin-top:0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    color: #9F9F9F;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#header{
+    width:100%;
+    height:40px;
+    background-color: #F1F1F1;
+}
+
+
+#header_userId{
+    float: right;
+    color:#0000EE;
+    line-height: 40px;
+}
+
+#header_logOut{
+    border: 0;
+    background-color: #0000EE;
+    color: #ffffff;
+}
+
+#mainFrame{
+    width:960px;
+    /*border:1px solid red;*/
+    margin-left: auto;
+    margin-right: auto;
+    height: 1200px;
+}
+
+#mainFrame_left{
+    width: 200px;height:910px; border: 1px solid #E1E1E1;float:left;
+}
+
+#mainFrame_right{
+    width:750px;height:910px; border: 1px solid #E1E1E1;float:right;
+}
