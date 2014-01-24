@@ -56,7 +56,7 @@ div{
 #header_input{
     width: 220px;
     margin-left: 20px;
-    height: 25px;
+    height: 23px;
     border: 1px ridge #DDDDDD;
 }
 
@@ -90,4 +90,19 @@ div{
     height: 540px;
     width: 740px;
     float: right;
+}
+
+.header_tool_tool{
+    position:relative;
+    text-align: center;
+    width:25px;
+    height:25px;
+    line-height: 25px;
+    margin-left:5px;
+    display:inline-block;
+    vertical-align: middle;
+}
+
+#header_username{
+    min-width:50px;
 }
