@@ -57,7 +57,8 @@ div{
     width: 220px;
     margin-left: 20px;
     height: 23px;
-    border: 1px ridge #DDDDDD;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
 }
 
 .header_tool_font{
@@ -106,8 +107,84 @@ div{
 #header_username{
     min-width:50px;
     font-weight: bolder;
+    text-overflow: ellipsis;
 }
 
 .header_tool_img{
     width:24px;height:19px;margin-top:2px;
+}
+
+#mainbody_left_userphoto{
+    width: 220px;
+    height: 220px;
+}
+
+#mainbody_left_userinfo{
+    width: 220px;
+    height: 290px;
+    margin-top: 9px;
+}
+
+#mainbody_left_userinfo_nickname{
+    font-size: 28px;
+    color: #333333;
+    font-weight: bolder;
+    text-overflow: ellipsis;
+}
+#mainbody_left_userinfo_realname{
+    color: #666666;
+    font-size:20px;
+    text-overflow: ellipsis;
+}
+
+#mainbody_left_userinfo_detail{
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+    height: 145px;
+}
+
+#mainbody_left_userinfo_detail_list{
+    list-style: none;
+}
+#mainbody_left_userinfo_detail_list li{
+    overflow-x:hidden;
+    margin-left: -40px;
+    text-overflow: ellipsis;
+    font-size: 14px;
+}
+.url{
+    color: #3879D9;
+}
+
+.url:hover{
+    color: #F29600;
+    cursor:pointer;
+}
+
+#mainbody_right_menu{
+    line-height:36px;
+    text-align: center;
+    font-size: 30px;
+}
+
+#mainbody_right_menu_1{
+    width:129px;
+    height: 36px;
+    float:left;
+    border: 1px solid #DDDDDD;
+    border-bottom:0;
+    border-right: 0;
+    border-radius: 4px;
+}
+
+#mainbody_right_menu_2{
+    width:609px;
+    margin-top: 3px;
+    height: 33px;
+    border: 1px solid #DDDDDD;
+    float:right;
+    border-top:0;
+    border-right: 0;
 }
