@@ -6,14 +6,14 @@
     <link type="text/css" href="../stylesheets/main.css" rel="stylesheet"/>
 </head>
 <body>
-    <div id="header" style="">
+    <div id="header" class="jianbian">
         <div class="header_container">
             <div id="header_weibologo"><img src="../images/weibo_logo_32x32.png" alt=""/></div>
             <div id="header_tool">
                 <table>
                     <tr>
                         <td id="header_link"></td>
-                        <td id="header_search"><input id="header_input" type="text" /></td>
+                        <td id="header_search"><input id="header_input" type="text" value="  搜索" /></td>
                         <td class="header_tool_font">首页</td>
                         <td class="header_tool_font">微博</td>
                         <td class="header_tool_font">热门</td>
@@ -72,16 +72,63 @@
                         </li>
                     </ul>
                 </div>
+                <div id="mainbody_left_follower">
+                    <div class="mainbody_left_follower_div">
+                        <div>100</div>
+                        <div style="font-size:12px;font-weight:normal;color:#999999;">粉丝</div>
+                    </div>
+                    <div class="mainbody_left_follower_div">
+                        <div>90</div>
+                        <div style="font-size:11px;font-weight:normal;color:#999999;">关注</div>
+                    </div>
+                    <div class="mainbody_left_follower_div">
+                        <div>140</div>
+                        <div style="font-size:12px;font-weight:normal;color:#999999;">微博</div>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="mainbody_right">
             <div id="mainbody_right_menu">
                 <div id="mainbody_right_menu_1">
-                    <img src="../images/1.png" />aa
+                    <div class="btn_hand">
+                        <img src="../images/1.png" />个人信息分析
+                    </div>
                 </div>
-                <div id="mainbody_right_menu_2"></div>
+                <div id="mainbody_right_menu_2">
+                    <div style="float:left;margin-left:25px;">
+                        <div class="btn_hand mainbody_right_menu_2_pri">
+                            <img  src="../images/2.png"/>&nbsp;特征信息分析
+                        </div>
+                        <div class="btn_hand mainbody_right_menu_2_pub">
+                            <img src="../images/3.png"/>&nbsp;公共信息分析
+                        </div>
+                        <input class="btn_hand" id="mainbody_right_modifyUser" type="button" value="编辑个人信息" />
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div id="mainbody_right_info">
+                    <div id="mainbody_right_info_weibo">
+                        <div id="mainbody_right_info_weibo_header" class="jianbian"></div>
+                        <div class="mainbody_right_info_weibo">1</div>
+                        <div class="mainbody_right_info_weibo">2</div>
+                        <div class="mainbody_right_info_weibo">3</div>
+                    </div>
+                    <div id="mainbody_right_info_chart">
+                        <div id="mainbody_right_info_chart_header" class="jianbian"></div>
+                    </div>
+                    <div id="mainbody_right_info_chart_total">
+                        <div class="mainbody_right_info_chart_total_div">1</div>
+                        <div class="mainbody_right_info_chart_total_div">2</div>
+                        <div id="mainbody_right_info_chart_total_div_sp" class="mainbody_right_info_chart_total_div">3</div>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+    <div class="clear"></div>
+    <div style="margin-top: 30px;;height: 350px; width: 980px; margin-left:auto;margin-right:auto;">
+        <img src="../images/bottom.png"/>
     </div>
 </body>
 </html>

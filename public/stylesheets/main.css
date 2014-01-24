@@ -10,11 +10,14 @@ div{
     display:block;
 }
 
+.jianbian{
+    background-color: #F5F5F5;
+    background-image: -moz-linear-gradient(#FAFAFA, #EBEBEB);/*moz*/
+    background-image: -webkit-linear-gradient(#FAFAFA, #EBEBEB); /*webkit*/
+    background-image: linear-gradient(#FAFAFA, #EBEBEB);
+}
+
 #header{
-    background-color:#F6F6F6;
-    background-image: -moz-linear-gradient(#f9f9f9, #f3f3f3);/*moz*/
-    background-image: -webkit-linear-gradient(#f9f9f9, #f3f3f3); /*webkit*/
-    background-image: linear-gradient(#f9f9f9, #f3f3f3);
     width: 100%;
     height: 41px;
     border-bottom: 1px solid #E5E5E5
@@ -38,7 +41,6 @@ div{
     width:935px;
     float: right;
     height: 40px;
-    /*border: 1px solid blue;*/
 }
 
 #header_link{
@@ -59,6 +61,7 @@ div{
     height: 23px;
     border: 1px solid #DDDDDD;
     border-radius: 3px;
+    color: #AAAAAA;
 }
 
 .header_tool_font{
@@ -138,11 +141,34 @@ div{
 }
 
 #mainbody_left_userinfo_detail{
-    margin-top: 15px;
+    margin-top: 7px;
     padding-top: 10px;
     border-top: 1px solid #EEEEEE;
     border-bottom: 1px solid #EEEEEE;
     height: 145px;
+}
+
+#mainbody_left_follower{
+    width: 220px;
+    border-bottom: 1px solid #EEEEEE;
+    margin-top: 10px;
+    height: 75px;
+}
+
+.mainbody_left_follower_div{
+    margin-top: 10px;
+    color: #222222;
+    width:66px;
+    height:62px;
+    display: inline-block;
+    text-align: center;
+    line-height:23px;
+    font-size: 23px;
+    font-weight: bold;
+}
+.mainbody_left_follower_div:hover{
+    cursor: pointer;
+    color: #4183C4;
 }
 
 #mainbody_left_userinfo_detail_list{
@@ -166,7 +192,6 @@ div{
 #mainbody_right_menu{
     line-height:36px;
     text-align: center;
-    font-size: 30px;
 }
 
 #mainbody_right_menu_1{
@@ -176,7 +201,8 @@ div{
     border: 1px solid #DDDDDD;
     border-bottom:0;
     border-right: 0;
-    border-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius:4px;
 }
 
 #mainbody_right_menu_2{
@@ -187,4 +213,88 @@ div{
     float:right;
     border-top:0;
     border-right: 0;
+    line-height: 34px;
+}
+
+.btn_hand:hover{
+    cursor:pointer;
+}
+.mainbody_right_menu_2_pri{
+    text-align: left;
+    width: 99px;
+    display:inline-block;
+}
+.mainbody_right_menu_2_pub{
+    margin-left: 20px;
+    display:inline-block;
+}
+
+.clear{
+    clear: both;
+}
+#mainbody_right_info{
+    width:740px;
+    height:550px;
+    /*border: 1px solid #D5D5D5;*/
+}
+#mainbody_right_modifyUser{
+    margin-left:250px;
+    border:1px solid #D5D5D5;
+    border-radius:3px;
+    color: #333333;
+    background-color: #F4F4F4;
+    height: 25px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#mainbody_right_info_weibo{
+    width: 740px;
+    height: 180px;
+    margin-top: 22px;
+    border: 1px solid #D5D5D5;
+    border-radius: 4px;
+}
+
+#mainbody_right_info_weibo_header{
+    height: 36px;
+    width: 740px;
+    border-bottom:1px solid #D5D5D5;
+}
+
+.mainbody_right_info_weibo{
+    width:740px;
+    height:47px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+#mainbody_right_info_chart{
+    height: 187px;
+    width: 740px;
+    margin-top: 22px;
+    border:1px solid #D5D5D5;
+}
+
+#mainbody_right_info_chart_header{
+    height: 36px;
+    width: 740px;
+    border-bottom:1px solid #D5D5D5;
+}
+
+#mainbody_right_info_chart_total{
+    width: 740px;
+    height:98px;
+    border: 1px solid #DDDDDD;
+    border-top:0;
+}
+
+.mainbody_right_info_chart_total_div{
+    width: 243px;
+    height: 98px;
+    border-right: 1px solid #DDDDDD;
+    display: inline-block;
+}
+
+#mainbody_right_info_chart_total_div_sp{
+    border: 0;
 }
