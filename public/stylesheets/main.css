@@ -105,4 +105,9 @@ div{
 
 #header_username{
     min-width:50px;
+    font-weight: bolder;
+}
+
+.header_tool_img{
+    width:24px;height:19px;margin-top:2px;
 }
