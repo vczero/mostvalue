@@ -4,16 +4,22 @@
 <head>
     <title>LBS&SNS</title>
     <link type="text/css" href="../stylesheets/main.css" rel="stylesheet"/>
+    <script type="text/javascript" src="../javascripts/main.js"></script>
 </head>
 <body>
+<form method="post" action="">
     <div id="header" class="jianbian">
         <div class="header_container">
             <div id="header_weibologo"><img src="../images/weibo_logo_32x32.png" alt=""/></div>
             <div id="header_tool">
                 <table>
                     <tr>
-                        <td id="header_link"></td>
-                        <td id="header_search"><input id="header_input" type="text" value="  搜索" /></td>
+                        <td id="header_link">
+                            <img src="../images/pointer.png" />
+                        </td>
+                        <td id="header_search">
+                            <input onclick="header_input_click()" onblur="header_input_blur()" id="header_input"  type="text" value="  搜索"/>
+                        </td>
                         <td class="header_tool_font">首页</td>
                         <td class="header_tool_font">微博</td>
                         <td class="header_tool_font">热门</td>
@@ -23,7 +29,7 @@
                                 <img style="width:23px;height:23px;margin-top:1px;" src="../images/uesr_logo_small.png"/>
                             </div>
                             <div class="header_tool_tool" id="header_username">
-                               vczero
+                               <%=userId%>
                             </div>
                             <div class="header_tool_tool">
                                 <img class="header_tool_img" src="../images/tool_add.png"/>
@@ -74,7 +80,7 @@
                 </div>
                 <div id="mainbody_left_follower">
                     <div class="mainbody_left_follower_div">
-                        <div>100</div>
+                        <div onclick="AA()">100</div>
                         <div style="font-size:12px;font-weight:normal;color:#999999;">粉丝</div>
                     </div>
                     <div class="mainbody_left_follower_div">
@@ -90,14 +96,14 @@
         </div>
         <div id="mainbody_right">
             <div id="mainbody_right_menu">
-                <div id="mainbody_right_menu_1">
+                <div id="mainbody_right_menu_1" onclick="show_个人信息分析()">
                     <div class="btn_hand">
                         <img src="../images/1.png" />个人信息分析
                     </div>
                 </div>
                 <div id="mainbody_right_menu_2">
                     <div style="float:left;margin-left:25px;">
-                        <div class="btn_hand mainbody_right_menu_2_pri">
+                        <div class="btn_hand mainbody_right_menu_2_pri" onclick="show_特征信息分析()">
                             <img  src="../images/2.png"/>&nbsp;特征信息分析
                         </div>
                         <div class="btn_hand mainbody_right_menu_2_pub">
@@ -109,7 +115,9 @@
                 <div class="clear"></div>
                 <div id="mainbody_right_info">
                     <div id="mainbody_right_info_weibo">
-                        <div id="mainbody_right_info_weibo_header" class="jianbian"></div>
+                        <div id="mainbody_right_info_weibo_header" class="jianbian">
+                           &nbsp; 微博
+                        </div>
                         <div class="mainbody_right_info_weibo">1</div>
                         <div class="mainbody_right_info_weibo">2</div>
                         <div class="mainbody_right_info_weibo">3</div>
@@ -123,6 +131,8 @@
                         <div id="mainbody_right_info_chart_total_div_sp" class="mainbody_right_info_chart_total_div">3</div>
                     </div>
                 </div>
+                <div id="specialInfo">特征信息分析</div>
+                <div id="publicInfo">公共信息分析</div>
             </div>
         </div>
     </div>
@@ -130,5 +140,6 @@
     <div style="margin-top: 30px;;height: 350px; width: 980px; margin-left:auto;margin-right:auto;">
         <img src="../images/bottom.png"/>
     </div>
+</form>
 </body>
 </html>

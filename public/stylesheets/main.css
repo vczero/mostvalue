@@ -49,6 +49,7 @@ div{
     height:38px;
     border-left: 1px solid #E5E5E5;
     border-right: 1px solid #E5E5E5;
+    text-align: center;
 }
 
 #header_search{
@@ -69,6 +70,9 @@ div{
     font-size: 14px;
     font-weight: bolder;
     text-align: center;
+}
+.header_tool_font:hover{
+    cursor: pointer;
 }
 
 #header_tool_user{
@@ -175,10 +179,10 @@ div{
     list-style: none;
 }
 #mainbody_left_userinfo_detail_list li{
-    overflow-x:hidden;
     margin-left: -40px;
     text-overflow: ellipsis;
-    font-size: 14px;
+    overflow: hidden;
+    font-size: 12px;
 }
 .url{
     color: #3879D9;
@@ -254,18 +258,37 @@ div{
     margin-top: 22px;
     border: 1px solid #D5D5D5;
     border-radius: 4px;
+    text-align: left;
 }
 
 #mainbody_right_info_weibo_header{
     height: 36px;
     width: 740px;
     border-bottom:1px solid #D5D5D5;
+    text-align: left;
+    font-weight: bold;
+    font-size:15px;
 }
 
 .mainbody_right_info_weibo{
-    width:740px;
+    width:730px;
     height:47px;
+    line-height: 22px;
     border-bottom: 1px solid #E5E5E5;
+    padding-left: 10px;
+}
+
+.mainbody_right_info_weibo_createtime{
+    width:370px;
+    float: right;
+    display: inline-block;
+    color: #999999;
+}
+
+.mainbody_right_info_weibo_commetnt{
+    display: inline-block;
+    color: #4183C4;
+    font-weight: bold;
 }
 
 #mainbody_right_info_chart{
@@ -297,4 +320,16 @@ div{
 
 #mainbody_right_info_chart_total_div_sp{
     border: 0;
+}
+
+#specialInfo{
+    visibility: hidden;
+    width: 740px;
+    height: 200px;
+    border: 1px solid red;
+    z-index: 50;
+}
+
+#publicInfo{
+    visibility: hidden;
 }

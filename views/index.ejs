@@ -1,57 +1,213 @@
 <!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <html>
-  <head>
+<head>
     <title>LBS&SNS</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script type="text/javascript">
-        if(name===''){
-            document.getElementById('header_logOut').visibility=hidden;
-        }
-    </script>
-  </head>
-  <body>
-    <div id="header">
-        <div id="header_userId">欢迎你，
-            <%
-                var name='';
-                if(userId){
-                    name=userId;
-                }else{
-                    name='请登录';
-                }
-            %>
-            <%= name %>
-            <input id="header_logOut" type="button" value="退出"/>
+    <link type="text/css" href="../stylesheets/main.css" rel="stylesheet"/>
+    <script type="text/javascript" src="../javascripts/main.js"></script>
+</head>
+<body>
+<form method="post" action="">
+    <div id="header" class="jianbian">
+        <div class="header_container">
+            <div id="header_weibologo"><img src="../images/weibo_logo_32x32.png" alt=""/></div>
+            <div id="header_tool">
+                <table>
+                    <tr>
+                        <td id="header_link">
+                            <img src="../images/pointer.png" />
+                        </td>
+                        <td id="header_search">
+                            <input onclick="header_input_click()" onblur="header_input_blur()" id="header_input"  type="text" value="  搜索"/>
+                        </td>
+                        <td class="header_tool_font">首页</td>
+                        <td class="header_tool_font">微博</td>
+                        <td class="header_tool_font">热门</td>
+                        <td class="header_tool_font">帮助</td>
+                        <td id="header_tool_user">
+                            <div class="header_tool_tool">
+                                <img style="width:23px;height:23px;margin-top:1px;" src="<%=userLogo%>"/>
+                            </div>
+                            <div class="header_tool_tool" id="header_username">
+                                <%=userId%>
+                            </div>
+                            <div class="header_tool_tool">
+                                <img class="header_tool_img" src="../images/tool_add.png"/>
+                            </div>
+                            <div class="header_tool_tool">
+                                <img class="header_tool_img" src="../images/tool_fix.png"/>
+                            </div>
+                            <div class="header_tool_tool">
+                                <img class="header_tool_img" src="../images/logout.png"/>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
-    <div id="mainFrame">
-        <div id="mainFrame_left" >
-            <div style="margin-left:15px;width:160px;margin-top: 5px;">
-                <div style="float: left;">
-                    <img  style="width:90px; height:90px;" src=<%= userLogo %> />
+    <div id="mainbody">
+        <div id="mainbody_left">
+            <div class="mainbody_left_userphoto">
+                <img class="mainbody_left_userphoto" style="border-radius: 5px;" src="<%=userLogo%>" />
+            </div>
+            <div id="mainbody_left_userinfo">
+                <div id="mainbody_left_userinfo_nickname"><%=userId%></div>
+                <div id="mainbody_left_userinfo_realname"><%=screen_name%></div>
+                <div id="mainbody_left_userinfo_detail">
+                    <ul id="mainbody_left_userinfo_detail_list">
+                        <li>
+                            <img src="../images/userinfo_tool_1.png">
+                            <span style="text-overflow: ellipsis;">
+                                <%
+                                    function getBy14(str){
+                                        var newStr='';
+                                        if(str.length>14){
+                                            for(var ch=0;ch<14; ch++){
+                                                newStr+=str[ch];
+                                            }
+                                            newStr+='...';
+                                        }else{
+                                            newStr=str;
+                                        }
+                                        return newStr;
+                                    }
+                                    function getpicUrl(str){
+                                        var newStr='';
+                                        if(str &&str.length){
+                                            for(var ipic=0;ipic<str.length;ipic++){
+                                                newStr+=str[ipic];
+                                            }
+                                            newStr='图片地址:'+newStr;
+                                        }else{
+                                            newStr='无配图';
+                                        }
+                                        return newStr;
+                                    }
+                                  %>
+                                <%=getBy14(description)%>
+                            </span>
+                        </li>
+                        <li>
+                            <img src="../images/userinfo_tool_2.png">
+                            <span>
+                                <%=getBy14(location)%>
+                            </span>
+                        </li>
+                        <li>
+                            <img src="../images/userinfo_tool_3.png">
+                            <span class="url"> wlhmyit@126.com</span>
+                        </li>
+                        <li>
+                            <img src="../images/userinfo_tool_4.png">
+                            <span class="url"><a href="<%=url%>"></a></span>
+                        </li>
+                        <li>
+                            <img src="../images/userinfo_tool_5.png">
+                            <span> <%=created_at%></span>
+                        </li>
+                    </ul>
                 </div>
-                <div style="float: right;width: 55px;font-size:13px;text-align: center">
-                    <br/>
-                    <%=name%>
-                    <br/>
-                    <div style="font-size: 14px;">
-                        <%
-                            var fanNum='';
-                            if(fansCount){
-                                fanNum=fansCount;
-                            }else{
-                                fanNum='0';
-                            }
-                        %>
-                    <%=fanNum%><br/>
-                    粉丝
+                <div id="mainbody_left_follower">
+                    <div class="mainbody_left_follower_div">
+                        <div><%=followers_count%></div>
+                        <div style="font-size:12px;font-weight:normal;color:#999999;">粉丝</div>
+                    </div>
+                    <div class="mainbody_left_follower_div">
+                        <div><%=friends_count%></div>
+                        <div style="font-size:11px;font-weight:normal;color:#999999;">关注</div>
+                    </div>
+                    <div class="mainbody_left_follower_div">
+                        <div><%=statuses_count%></div>
+                        <div style="font-size:12px;font-weight:normal;color:#999999;">微博</div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="mainFrame_right">
-
+        <div id="mainbody_right">
+            <div id="mainbody_right_menu">
+                <div id="mainbody_right_menu_1" onclick="show_个人信息分析()">
+                    <div class="btn_hand">
+                        <img src="../images/1.png" />个人信息分析
+                    </div>
+                </div>
+                <div id="mainbody_right_menu_2">
+                    <div style="float:left;margin-left:25px;">
+                        <div class="btn_hand mainbody_right_menu_2_pri" onclick="show_特征信息分析()">
+                            <img  src="../images/2.png"/>&nbsp;特征信息分析
+                        </div>
+                        <div class="btn_hand mainbody_right_menu_2_pub">
+                            <img src="../images/3.png"/>&nbsp;公共信息分析
+                        </div>
+                        <input class="btn_hand" id="mainbody_right_modifyUser" type="button" value="编辑个人信息" />
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div id="mainbody_right_info">
+                    <div id="mainbody_right_info_weibo">
+                        <div id="mainbody_right_info_weibo_header" class="jianbian">
+                           &nbsp; 微博
+                        </div>
+                        <div class="mainbody_right_info_weibo">
+                            <%=getBy14(statuses_text[0])%>
+                            &nbsp;&nbsp;&nbsp;
+                            <%=getpicUrl(pic_urls[0])%>
+                            <br/>
+                            <div class="mainbody_right_info_weibo_commetnt">
+                                转发数:<%=reposts_count[0]%>
+                                评论数:<%=comments_count[0]%>
+                            </div>
+                            <div class="mainbody_right_info_weibo_createtime">
+                                create at <%=statuses_created_at[0]%>
+                            </div>
+                        </div>
+                        <div class="mainbody_right_info_weibo">
+                            <%=getBy14(statuses_text[1])%>
+                            &nbsp;&nbsp;&nbsp;
+                            <%=getpicUrl(pic_urls[1])%>
+                            <br/>
+                            <div class="mainbody_right_info_weibo_commetnt">
+                                转发数:<%=reposts_count[1]%>
+                                评论数:<%=comments_count[2]%>
+                            </div>
+                            <div class="mainbody_right_info_weibo_createtime">
+                                create at <%=statuses_created_at[1]%>
+                            </div>
+                        </div>
+                        <div class="mainbody_right_info_weibo">
+                            <%=getBy14(statuses_text[2])%>
+                            &nbsp;&nbsp;&nbsp;
+                            <%=getpicUrl(pic_urls[2])%>
+                            <br/>
+                            <div class="mainbody_right_info_weibo_commetnt">
+                                转发数:<%=reposts_count[2]%>
+                                评论数:<%=comments_count[2]%>
+                            </div>
+                            <div class="mainbody_right_info_weibo_createtime">
+                                create at <%=statuses_created_at[2]%>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="mainbody_right_info_chart">
+                        <div id="mainbody_right_info_chart_header" class="jianbian"></div>
+                    </div>
+                    <div id="mainbody_right_info_chart_total">
+                        <div class="mainbody_right_info_chart_total_div">
+                            <%=statuses_text[0]%>
+                        </div>
+                        <div class="mainbody_right_info_chart_total_div">2</div>
+                        <div id="mainbody_right_info_chart_total_div_sp" class="mainbody_right_info_chart_total_div">3</div>
+                    </div>
+                </div>
+                <div id="specialInfo">特征信息分析</div>
+                <div id="publicInfo">公共信息分析</div>
+            </div>
         </div>
     </div>
-  </body>
+    <div class="clear"></div>
+    <div style="margin-top: 30px;;height: 350px; width: 980px; margin-left:auto;margin-right:auto;">
+        <img src="../images/bottom.png"/>
+    </div>
+</form>
+</body>
 </html>
