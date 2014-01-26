@@ -34,7 +34,7 @@ exports.index = function(req, res){
                 var friends_count=data.friends_count;
                 var statuses_count=data.statuses_count;
                 var description=data.description;
-                var url=data.url;
+                var myurl=data.url;
                 var created_at=data.created_at;
                 var date=new Date(created_at);
                 var options={
@@ -47,6 +47,7 @@ exports.index = function(req, res){
                     var comments_count=[];
                     var pic_urls=[];
                     var statuses_created_at=[];
+                    console.log(myurl);
                     for(var i=0; i<3;i++){
                         statuses_text.push(data.statuses[i].text);
                         reposts_count.push(data.statuses[i].reposts_count);
@@ -66,7 +67,7 @@ exports.index = function(req, res){
                             friends_count:friends_count,
                             statuses_count:statuses_count,
                             description:description,
-                            url:url,
+                            myurl:myurl,
                             created_at:date,
                             statuses_text:statuses_text,
                             reposts_count:reposts_count,

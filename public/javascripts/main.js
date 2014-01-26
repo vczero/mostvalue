@@ -28,3 +28,16 @@ function show_个人信息分析(){
     var specialInfo=document.getElementById('specialInfo');
     specialInfo.style.visibility='hidden';
 }
+
+function toScreenY(maxy,y){
+    return maxy-y;
+}
+
+function toBatchY(maxy,ys){
+    var newYs=[];
+    for(var i=0; i<ys.length;i++){
+        newYs.push(toScreenY(maxy,y));
+    }
+    return newYs;
+}
+

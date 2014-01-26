@@ -186,6 +186,7 @@ div{
 }
 .url{
     color: #3879D9;
+    text-decoration:none;
 }
 
 .url:hover{

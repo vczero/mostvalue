@@ -60,10 +60,10 @@
                             <img src="../images/userinfo_tool_1.png">
                             <span style="text-overflow: ellipsis;">
                                 <%
-                                    function getBy14(str){
+                                    function getByNum(str,num){
                                         var newStr='';
-                                        if(str.length>14){
-                                            for(var ch=0;ch<14; ch++){
+                                        if(str.length>num){
+                                            for(var ch=0;ch<num; ch++){
                                                 newStr+=str[ch];
                                             }
                                             newStr+='...';
@@ -85,13 +85,13 @@
                                         return newStr;
                                     }
                                   %>
-                                <%=getBy14(description)%>
+                                <%=getByNum(description,14)%>
                             </span>
                         </li>
                         <li>
                             <img src="../images/userinfo_tool_2.png">
                             <span>
-                                <%=getBy14(location)%>
+                                <%=getByNum(location,14)%>
                             </span>
                         </li>
                         <li>
@@ -100,7 +100,14 @@
                         </li>
                         <li>
                             <img src="../images/userinfo_tool_4.png">
-                            <span class="url"><a href="<%=url%>"></a></span>
+                            <span class="url">
+                                <%
+                                if(!myurl){
+                                    myurl='暂无博客地址';
+                                }
+                                %>
+                                <a style="text-decoration:none;color: #3879D9;" href="<%=myurl%>"><%=getByNum(myurl,28)%></a>
+                            </span>
                         </li>
                         <li>
                             <img src="../images/userinfo_tool_5.png">
@@ -149,7 +156,7 @@
                            &nbsp; 微博
                         </div>
                         <div class="mainbody_right_info_weibo">
-                            <%=getBy14(statuses_text[0])%>
+                            <%=getByNum(statuses_text[0],14)%>
                             &nbsp;&nbsp;&nbsp;
                             <%=getpicUrl(pic_urls[0])%>
                             <br/>
@@ -162,7 +169,7 @@
                             </div>
                         </div>
                         <div class="mainbody_right_info_weibo">
-                            <%=getBy14(statuses_text[1])%>
+                            <%=getByNum(statuses_text[1],14)%>
                             &nbsp;&nbsp;&nbsp;
                             <%=getpicUrl(pic_urls[1])%>
                             <br/>
@@ -175,7 +182,7 @@
                             </div>
                         </div>
                         <div class="mainbody_right_info_weibo">
-                            <%=getBy14(statuses_text[2])%>
+                            <%=getByNum(statuses_text[2],14)%>
                             &nbsp;&nbsp;&nbsp;
                             <%=getpicUrl(pic_urls[2])%>
                             <br/>
@@ -190,6 +197,23 @@
                     </div>
                     <div id="mainbody_right_info_chart">
                         <div id="mainbody_right_info_chart_header" class="jianbian"></div>
+                        <div>
+                            <svg id="svg_chart" width="100%" height="100%">
+                                <path fill="none" d="M20.5 20 20.5  130" stroke="#C0C0C0" stroke-width="1" />
+                                <path fill="none" d="M20 130.5 720  130.5" stroke="#C0D0E0" stroke-width="1" />
+                                <rect fill="red" stroke-width="1" width="10" height="90" x="25" y="40"/>
+                                <rect fill="red" stroke-width="1" width="10" height="100" x="45" y="30"/>
+                                <rect fill="red" stroke-width="1" width="10" height="90" x="65" y="40"/>
+                            </svg>
+                            <script type="text/javascript">
+                                var svg=document.getElementsByTagName('svg');
+                                var rect=document.createElement('rect');
+                                rect.setAttribute('fill','blue');
+                                rect.setAttribute('width','10');
+                                rect.setAttribute('height','90');
+                                svg.appendChild(rect);
+                            </script>
+                        </div>
                     </div>
                     <div id="mainbody_right_info_chart_total">
                         <div class="mainbody_right_info_chart_total_div">
