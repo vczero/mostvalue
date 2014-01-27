@@ -1,14 +1,18 @@
 window.onload=function(){
+    var hidden_batch_weibo=document.getElementById('hidden_batch_weibo');
+    var ys=hidden_batch_weibo.value;
+
     var options={
         height:130,
         width:700,
-        maxY:90,
+        maxY:10,
         id:'svg_chart',
-        ys:[6,60,80,90,90,6,60,80,90,90,6,60,80,90,90],
+        ys:[10,10,10,3,4,90,75,87,16,0,30,10,87,12,45,67,37],
         color:['#8BBC21','#2F7ED8','#0D233A','green','red','blue','red','green','blcak','red','blue','red','green','blcak','red']
     };
     drawSvgBar(options);
 };
+
 
 //--------------------------柱状图绘制----------------------------------
 //转屏幕坐标
@@ -80,9 +84,6 @@ function drawPolyLine(id,point){
     svg.appendChild(polyline);
 }
 
-function aa(value){
-    alert(value);
-}
 //---------------------------------------------------------------------
 function header_input_click(){
     var input=document.getElementById('header_input');

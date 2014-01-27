@@ -196,7 +196,9 @@
                         </div>
                     </div>
                     <div id="mainbody_right_info_chart">
-                        <div id="mainbody_right_info_chart_header" class="jianbian"></div>
+                        <div id="mainbody_right_info_chart_header" class="jianbian">
+                            <span style="font-size: 15px;font-weight: bolder;float: left;">&nbsp;近16条微博评论数</span>
+                        </div>
                         <div>
                             <svg id="svg_chart" width="100%" height="100%">
                                 <defs>
@@ -215,14 +217,25 @@
                     </div>
                     <div id="mainbody_right_info_chart_total">
                         <div class="mainbody_right_info_chart_total_div">
-                            <%=statuses_text[0]%>
+                            <div style="font-size:28px;color:#222222;font-weight: bolder;">
+                                <%=weidu_status%>
+                            </div>
+                            <span style="color:#999999">新微博未读数</span>
                         </div>
-                        <div class="mainbody_right_info_chart_total_div">2</div>
-                        <div id="mainbody_right_info_chart_total_div_sp" class="mainbody_right_info_chart_total_div">3</div>
+                        <div class="mainbody_right_info_chart_total_div">
+                            <div style="font-size:28px;color:#222222;font-weight: bolder;">
+                                <%=sixin_dm%>
+                            </div>
+                            <span style="color:#999999">新私信数</span>
+                        </div>
+                        <div id="mainbody_right_info_chart_total_div_sp" class="mainbody_right_info_chart_total_div">
+                            <div style="font-size:28px;color:#222222;font-weight: bolder;">
+                                <%=tongzhi_notice%>
+                            </div>
+                            <span style="color:#999999">新通知未读数</span>
+                        </div>
                     </div>
                 </div>
-                <div id="specialInfo">特征信息分析</div>
-                <div id="publicInfo">公共信息分析</div>
             </div>
         </div>
     </div>
@@ -233,10 +246,14 @@
             About
         </div>
         <div class="clear"></div>
-        <div style="width: 740px;float: right; text-align: center;margin-top: 30px; color: #9999A5;">
-            基于Node.js平台，采用了新浪微博开放平台(npm nodeweibo):https://github.com/vczero/node-weibo
+        <div style="width: 740px;float: right; text-align: center;margin-top: 30px; color: #9999A5; height:70px;">
+            基于Node.js平台，采用了新浪微博开放平台(npm nodeweibo):
+            <a href="https://github.com/vczero/node-weibo">
+                https://github.com/vczero/node-weibo
+            </a>
         </div>
     </div>
 </form>
+<input id="hidden_batch_weibo" type="text" style="visibility: hidden" value="<%=batch_weibo%>"/>
 </body>
 </html>

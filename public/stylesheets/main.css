@@ -82,7 +82,7 @@ div{
 
 #mainbody{
     width: 980px;
-    min-height:540px;
+    min-height:400px;
     margin-top:20px;
     margin-left: auto;
     margin-right: auto;
@@ -323,14 +323,3 @@ div{
     border: 0;
 }
 
-#specialInfo{
-    visibility: hidden;
-    width: 740px;
-    height: 200px;
-    border: 1px solid red;
-    z-index: 50;
-}
-
-#publicInfo{
-    visibility: hidden;
-}
