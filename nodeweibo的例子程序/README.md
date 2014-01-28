@@ -1,8 +1,9 @@
 mostvalue
 =========
 
-A app of base on LBS&amp;SNS    
-![例子截图](mostvalue\nodeweibo的例子程序\example.png)   
+A app of base on LBS&amp;SNS      
+####例子截图请看：       
+https://github.com/vczero/mostvalue/blob/master/nodeweibo%E7%9A%84%E4%BE%8B%E5%AD%90%E7%A8%8B%E5%BA%8F/example.png  
 ####说明    
 (1)这是基于nodeweibo开发的例子程序     
 https://github.com/vczero/node-weibo     
