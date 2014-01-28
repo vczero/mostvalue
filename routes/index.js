@@ -56,6 +56,7 @@ exports.index = function(req, res){
                         pic_urls.push(data.statuses[0].pic_urls);
                         statuses_created_at.push(new Date(data.statuses[i].created_at));
                     }
+                    console.log(pic_urls);
                     var options={
                         access_token:access_token,
                         uid:uid
