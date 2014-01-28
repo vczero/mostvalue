@@ -9,5 +9,6 @@ mostvalue
 ####二、目录    
 (1)nodeweibo例子项目    
 平台：node.js+nodeweibo    
-url:https://github.com/vczero/node-weibo    
+nodeweibo的url:https://github.com/vczero/node-weibo     
+
 
